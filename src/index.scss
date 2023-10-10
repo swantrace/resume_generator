@@ -1,6 +1,11 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+$primary: #003366;
+$secondary: #38b8c5;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 @import "../node_modules/@mdxeditor/editor/dist/style.css";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+// import bootstrap scss
 
 .read_only_editor div[role="toolbar"] {
   visibility: hidden;
@@ -20,15 +25,6 @@ body {
   margin: auto 0;
 }
 
-/* Primary Color */
-.btn-primary,
 .card-header {
   background-color: #003366;
-  border-color: #003366;
-}
-
-/* Secondary Color */
-.btn-secondary {
-  background-color: #00aaff;
-  border-color: #00aaff;
 }

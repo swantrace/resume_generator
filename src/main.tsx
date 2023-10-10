@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Profile, Generator, Records } from "./routes";
-import "./index.css";
+import "./index.scss";
 import ErrorPage from "./error-page";
 import {
   profilePageLoader,
