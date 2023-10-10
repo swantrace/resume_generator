@@ -28,7 +28,6 @@ export default function WorkExperienceCard(props: {
   const [addNew, setAddNew] = useState<boolean>(false);
 
   const handleTextChange = (e: any, index: number, fieldName: string) => {
-    console.log("handleTextChange", e.target.value, index, fieldName);
     if (index === -1) {
       setNewExperience((prev) => {
         const newExperience = { ...prev };
@@ -104,9 +103,6 @@ export default function WorkExperienceCard(props: {
       title="Work Experience"
       addNewHandler={() => {
         setAddNew(true);
-      }}
-      onBlur={(e) => {
-        console.log("e", e, "onBlur");
       }}
     >
       {addNew ? (

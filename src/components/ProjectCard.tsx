@@ -15,7 +15,6 @@ export default function ProjectCard(props: {
       setProjects(props.projects);
     }
   }, [props.projects]);
-  console.log("projects", projects);
 
   const [newProject, setNewProject] = useState<ProjectRecord[number]>({
     name: "",
@@ -26,7 +25,6 @@ export default function ProjectCard(props: {
   const [addNew, setAddNew] = useState<boolean>(false);
 
   const handleTextChange = (e: any, index: number, fieldName: string) => {
-    console.log("handleTextChange", e.target.value, index, fieldName);
     if (index === -1) {
       setNewProject((prev) => {
         const newProject = { ...prev };
@@ -88,9 +86,6 @@ export default function ProjectCard(props: {
       title="Projects"
       addNewHandler={() => {
         setAddNew(true);
-      }}
-      onBlur={(e) => {
-        console.log("e", e, "onBlur");
       }}
     >
       {addNew ? (

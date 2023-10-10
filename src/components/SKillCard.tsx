@@ -15,7 +15,7 @@
 //       setProjects(props.projects);
 //     }
 //   }, [props.projects]);
-//   console.log("projects", projects);
+//
 
 //   const [newProject, setNewProject] = useState<ProjectRecord[number]>({
 //     name: "",
@@ -26,7 +26,7 @@
 //   const [addNew, setAddNew] = useState<boolean>(false);
 
 //   const handleTextChange = (e: any, index: number, fieldName: string) => {
-//     console.log("handleTextChange", e.target.value, index, fieldName);
+//
 //     if (index === -1) {
 //       setNewProject((prev) => {
 //         const newProject = { ...prev };
@@ -161,7 +161,6 @@ export default function SkillCard(props: {
       setSkills(props.skills);
     }
   }, [props.skills]);
-  console.log("skills", skills);
 
   const [newSkill, setNewSkill] = useState<SkillSet[number]>({
     name: "",
@@ -172,7 +171,6 @@ export default function SkillCard(props: {
   const [addNew, setAddNew] = useState<boolean>(false);
 
   const handleTextChange = (e: any, index: number, fieldName: string) => {
-    console.log("handleTextChange", e.target.value, index, fieldName);
     if (index === -1) {
       setNewSkill((prev) => {
         const newSkill = { ...prev };
@@ -233,9 +231,6 @@ export default function SkillCard(props: {
       title="Skills"
       addNewHandler={() => {
         setAddNew(true);
-      }}
-      onBlur={(e) => {
-        console.log("e", e, "onBlur");
       }}
     >
       {addNew ? (

@@ -4,15 +4,13 @@ export default function BaseCard({
   children,
   title,
   addNewHandler,
-  onBlur,
 }: {
   children: React.ReactNode;
   title: string;
   addNewHandler: () => void;
-  onBlur: (e: any) => void;
 }) {
   return (
-    <Form onBlur={onBlur}>
+    <Form>
       <Card className="border-0">
         <Card.Header className="d-flex justify-content-between align-items-center text-white">
           {title}

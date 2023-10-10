@@ -30,7 +30,6 @@ export default function EducationCard(props: {
 
   const handleTextChange = useCallback(
     (e: any, index: number, fieldName: string) => {
-      console.log("handleTextChange", e.target.value, index, fieldName);
       if (index === -1) {
         setNewEducation((prev) => {
           const newEducation = { ...prev };
@@ -121,9 +120,6 @@ export default function EducationCard(props: {
       title="Education"
       addNewHandler={() => {
         setAddNew(true);
-      }}
-      onBlur={(e) => {
-        console.log("e", e, "onBlur");
       }}
     >
       {addNew ? (

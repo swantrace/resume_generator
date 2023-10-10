@@ -84,7 +84,7 @@ const getRecordSummary = async () => {
 
 const getRecord = async (key: string) => {
   const record = await recordsStore.getItem<ApplicationRecord | null>(key);
-  console.log("record", record);
+
   return record;
 };
 
@@ -175,10 +175,7 @@ const getProfile = async () => {
     rawProjectRecord,
     rawSkillSet,
   ] = rawResult as [any, any, any, any, any, any];
-  console.log("rawResult", rawResult);
-  console.log("rawAvatar", rawAvatar);
-  console.log("rawContactInfo", rawContactInfo);
-  console.log("rawEducationRecord", rawEducationRecord);
+
   const result = {
     avatar: rawAvatar?.value ?? "",
     contactInfo: rawContactInfo?.value ?? {
@@ -197,8 +194,6 @@ const getProfile = async () => {
     projectRecord: rawProjectRecord?.value ?? [],
     skillSet: rawSkillSet?.value ?? [],
   };
-
-  console.log("result", result);
 
   return result as MyProfile;
 };
