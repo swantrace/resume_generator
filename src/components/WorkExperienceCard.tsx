@@ -63,7 +63,6 @@ export default function WorkExperienceCard(props: {
       await saveWorkExperienceRecord(newExperiences);
       props.revalidator.revalidate();
       setAddNew(false);
-      setDirty(false);
       setNewExperience({
         company: "",
         position: "",
@@ -74,8 +73,8 @@ export default function WorkExperienceCard(props: {
     } else {
       await saveWorkExperienceRecord(newExperiences);
       props.revalidator.revalidate();
-      setDirty(false);
     }
+    setDirty(false);
     props.setLoading(false);
   };
 

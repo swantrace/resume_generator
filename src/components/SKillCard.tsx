@@ -202,12 +202,20 @@ export default function SkillCard(props: {
     props.setLoading(true);
     const newSkills = [...skills];
     if (addNew) {
-      newSkills.push(newSkill);
+      newSkills.unshift(newSkill);
+      await saveSkillSet(newSkills);
+      props.revalidator.revalidate();
+      setAddNew(false);
+      setNewSkill({
+        name: "",
+        level: "Beginner",
+      });
+    } else {
+      await saveSkillSet(newSkills);
+      props.revalidator.revalidate();
     }
-    await saveSkillSet(newSkills);
-    props.revalidator.revalidate();
+    setDirty(false);
     props.setLoading(false);
-    setAddNew(false);
   };
 
   const handleCancel = (e) => {

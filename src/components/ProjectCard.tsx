@@ -56,12 +56,21 @@ export default function ProjectCard(props: {
     props.setLoading(true);
     const newProjects = [...projects];
     if (addNew) {
-      newProjects.push(newProject);
+      newProjects.unshift(newProject);
+      await saveProjectRecord(newProjects);
+      props.revalidator.revalidate();
+      setAddNew(false);
+      setNewProject({
+        name: "",
+        description: "",
+        link: "",
+      });
+    } else {
+      await saveProjectRecord(newProjects);
+      props.revalidator.revalidate();
     }
-    await saveProjectRecord(newProjects);
-    props.revalidator.revalidate();
+    setDirty(false);
     props.setLoading(false);
-    setAddNew(false);
   };
 
   const handleCancel = (e) => {

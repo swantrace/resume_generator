@@ -71,7 +71,6 @@ export default function EducationCard(props: {
         await saveEducationRecord(newEducations);
         props.revalidator.revalidate();
         setAddNew(false);
-        setDirty(false);
         setNewEducation({
           school: "",
           degree: "",
@@ -84,8 +83,8 @@ export default function EducationCard(props: {
       } else {
         await saveEducationRecord(newEducations);
         props.revalidator.revalidate();
-        setDirty(false);
       }
+      setDirty(false);
       props.setLoading(false);
     },
     [addNew, newEducation, educations, props]
