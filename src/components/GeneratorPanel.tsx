@@ -61,8 +61,7 @@ const GeneratorPanel = ({
       }
       setLoading(true);
       const openai = new OpenAI({
-        apiKey:
-          openAIKey || "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",
+        apiKey: openAIKey,
         dangerouslyAllowBrowser: true,
       });
       const data = { post: jobPost, profile };
