@@ -1,0 +1,41 @@
+{
+  "name": "resume_generator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://swantrace.github.io/resume_generator",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@mdxeditor/editor": "^1.2.2",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "gh-pages": "^6.0.0",
+    "localforage": "^1.10.0",
+    "openai": "^4.11.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vite-pwa/assets-generator": "^0.0.10",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-pwa": "^0.16.5"
+  }
+}

@@ -1,0 +1,34 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@mdxeditor/editor/dist/style.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+
+.read_only_editor div[role="toolbar"] {
+  visibility: hidden;
+}
+
+/* gradient background */
+body {
+  background: #75c538;
+  background: linear-gradient(90deg, #75c538 0%, #38b8c5 100%);
+}
+
+#root {
+  min-height: 101vh;
+}
+
+.profile-item-header > button {
+  margin: auto 0;
+}
+
+/* Primary Color */
+.btn-primary,
+.card-header {
+  background-color: #003366;
+  border-color: #003366;
+}
+
+/* Secondary Color */
+.btn-secondary {
+  background-color: #00aaff;
+  border-color: #00aaff;
+}
