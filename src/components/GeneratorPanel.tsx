@@ -66,7 +66,7 @@ const GeneratorPanel = ({
       });
       const data = { post: jobPost, profile };
       const dataString = JSON.stringify(data);
-      const prompt = `Please generate a resume and cover letter based on the profile and job post below. The output should be a JSON object that contains the following properties:
+      const prompt = `Please help me write a resume and cover letter based on the profile and job post below. The output should be a JSON object that contains the following properties:
           - company: The name of the company you are applying to.
           - position: The name of the position you are applying for.
           - resume: Your resume in markdown format.
@@ -89,14 +89,20 @@ const GeneratorPanel = ({
 
       try {
         const response = await openai.chat.completions.create({
-          model: "gpt-4",
+          model: "gpt-3.5-turbo",
           messages: [
             { role: "system", content: "You are a career coach" },
             { role: "user", content: prompt },
           ],
-          max_tokens: 8192,
+          temperature: 0.4,
+          max_tokens: 2000,
+          // top_p: 1,
+          stream: false,
+          // frequency_penalty: 1,
+          // presence_penalty: 1,
         });
         const text = response.choices[0].message.content;
+        console.log("text: ", text);
         const result = JSON.parse(text);
         const { company, position, resume, coverLetter } = result as any;
         const jobPostId = btoa(
@@ -114,7 +120,8 @@ const GeneratorPanel = ({
           resume,
         });
         window.location.href = `/generator/${jobPostId}`;
-      } catch {
+      } catch (e) {
+        console.error(e);
         alert("Error in generating resume and cover letter");
       } finally {
         setLoading(false);
