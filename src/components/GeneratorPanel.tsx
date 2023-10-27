@@ -89,10 +89,10 @@ const GeneratorPanel = ({
 
       try {
         const response = await openai.completions.create({
-          model: "gpt-3.5-turbo-instruct",
+          model: "gpt-3.5-turbo-16k",
           prompt,
           temperature: 1,
-          max_tokens: 2000,
+          max_tokens: 16385,
           top_p: 1,
           stream: false,
           frequency_penalty: 0,
