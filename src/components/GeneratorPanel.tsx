@@ -94,12 +94,7 @@ const GeneratorPanel = ({
             { role: "system", content: "You are a career coach" },
             { role: "user", content: prompt },
           ],
-          temperature: 1,
           max_tokens: 8192,
-          top_p: 1,
-          stream: false,
-          frequency_penalty: 0,
-          presence_penalty: 0,
         });
         const text = response.choices[0].message.content;
         const result = JSON.parse(text);
